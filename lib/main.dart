@@ -4,7 +4,6 @@ import 'package:full_screen_notification/controller/awesome_notification_control
 import 'package:full_screen_notification/splash/splash_page.dart';
 import 'package:get/get.dart';
 import 'bindings/app_bindings.dart';
-import 'home/home_page.dart';
 
 void main() {
   runApp(const MyApp());
