@@ -27,48 +27,31 @@ class NotificationActivity : FlutterActivity() {
         val button = findViewById<Button>(R.id.btn)
 
         button.setOnClickListener {
-            val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
 
-            if (keyguardManager.isDeviceLocked){
-                if (keyguardManager.isKeyguardSecure) {
-
-                    val intent = keyguardManager.createConfirmDeviceCredentialIntent(null, null);
-                    startActivityForResult(intent, REQUEST_PIN_OR_PASSWORD)
-
-
-                } else {
-                    // Device is not locked, start the activity directly
-                    navigateToMainActivity()
-                }
-            }
-            else{
-                navigateToMainActivity()
-            }
+            navigateToMainActivity()
 
         }
 
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_PIN_OR_PASSWORD) {
-            if (resultCode == Activity.RESULT_OK) {
-                // User entered correct PIN or password, start the activity
-              navigateToMainActivity()
-            } else {
-                // User canceled or entered incorrect PIN or password
-                // Handle accordingly, for example, show a message or exit the app
-            }
-        }
-    }
-
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP_MR1)
     override fun onBackPressed() {
         super.onBackPressed()
-        navigateToMainActivity()
+        val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+
+        if (keyguardManager.isDeviceLocked){
+            finish()
+        }
+        else{
+            navigateToMainActivity()
+        }
+
     }
     private fun navigateToMainActivity(){
         val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        turnScreenOffAndKeyguardOn()
         startActivity(intent)
         finish()
     }

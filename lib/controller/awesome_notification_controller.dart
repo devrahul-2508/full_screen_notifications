@@ -2,7 +2,8 @@ import 'dart:developer';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/services.dart';
-
+import 'package:full_screen_notification/service/method_channel_service.dart';
+import 'package:get/get.dart';
 
 class AwesomeNotificationController {
   /// Use this method to detect when a new notification or a schedule is created
@@ -11,7 +12,7 @@ class AwesomeNotificationController {
   static bool isNotificationCalled = false;
   static bool isNotificationTapped = false;
 
-  static const platform = MethodChannel('com.example.app/example');
+  static final _methodChannelService = Get.find<MethodChannelService>();
 
   @pragma("vm:entry-point")
   static Future<void> onNotificationCreatedMethod(
@@ -50,18 +51,8 @@ class AwesomeNotificationController {
 
     // Navigate into pages, avoiding to open the notification details page over another details page already opened
 
-    navigateToAndroidRoute(payLoadMsg);
+    _methodChannelService.navigateToAndroidRoute(payLoad: payLoadMsg);
 
     log("Notification tapped");
-  }
-
-  static navigateToAndroidRoute(String data) async {
-    try {
-      await platform.invokeMethod('sendData', {
-        "data": data,
-      });
-    } catch (e) {
-      log(e.toString());
-    }
   }
 }

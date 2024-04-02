@@ -33,7 +33,6 @@ class MainActivity: FlutterActivity() {
         intent.putExtra("message", payloadMsg)
         startActivity(intent)
         finish()
-
     }
 
 
