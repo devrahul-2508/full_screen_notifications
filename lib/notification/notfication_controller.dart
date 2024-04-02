@@ -20,24 +20,11 @@ class NotificationController extends GetxController {
   }
 
   navigateToProfile() {
-
-    // if (isNotificationTapped) {
-    //   Get.to(() => ProfilePage());
-    // } else {
-    //   var args = {"route": profileRoute};
-    //   Get.to(() => SplashPage(), arguments: args);
-    // }
     var args = {"route": profileRoute};
     Get.to(() => SplashPage(), arguments: args);
   }
 
   navigateToSettings() {
-    // if (isNotificationTapped) {
-    //   Get.to(() => SettingsPage());
-    // } else {
-    //   var args = {"route": settingsRoute};
-    //   Get.to(() => SplashPage(), arguments: args);
-    // }
     var args = {"route": settingsRoute};
     Get.to(() => SplashPage(), arguments: args);
   }

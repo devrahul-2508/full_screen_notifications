@@ -18,22 +18,6 @@ class SplashController extends GetxController {
     _navigateToHome();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-
-    // Check if Get.arguments is not null and if it contains the "route" key
-  }
-
-  // startNavigation() {
-  //   log("Start nav called");
-  //   if (Get.arguments != null && Get.arguments["route"] != null) {
-  //     Future.delayed(const Duration(seconds: 2), () {
-  //       navigate(Get.arguments["route"]);
-  //     });
-  //   }
-  // }
-
   navigate(String route) {
     switch (route) {
       case homeRoute:
