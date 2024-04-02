@@ -27,6 +27,7 @@ class NotificationActivity : FlutterActivity() {
         val button = findViewById<Button>(R.id.btn)
 
         button.setOnClickListener {
+            turnScreenOffAndKeyguardOn()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish() // Finish the current activity so that it's not kept in the back stack
@@ -36,9 +37,6 @@ class NotificationActivity : FlutterActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        // Start MainActivity when back button is pressed
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-        finish() // Finish the current activity so that it's not kept in the back stack
+        finish()
     }
 }

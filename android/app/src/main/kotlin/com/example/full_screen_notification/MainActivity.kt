@@ -11,7 +11,6 @@ class MainActivity: FlutterActivity() {
 
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
-        turnScreenOffAndKeyguardOn()
         super.configureFlutterEngine(flutterEngine)
         cachedFlutterEngine = flutterEngine
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
@@ -27,18 +26,12 @@ class MainActivity: FlutterActivity() {
         }
     }
 
-    private fun navigate(payloadMsg:String):Unit {
+    private fun navigate(payloadMsg:String) {
         var intent: Intent? = null;
         intent = Intent(this,NotificationActivity::class.java)
         intent.putExtra("message", payloadMsg)
         startActivity(intent)
-        finish()
-
     }
-
-
-
-
     companion object {
         var cachedFlutterEngine: FlutterEngine? = null
         fun createMethodChannel(
