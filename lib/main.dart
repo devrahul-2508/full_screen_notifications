@@ -1,9 +1,9 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:full_screen_notification/controller/awesome_notification_controller.dart';
-import 'package:full_screen_notification/splash/splash_page.dart';
 import 'package:get/get.dart';
 import 'bindings/app_bindings.dart';
+import 'controller/awesome_notification_controller.dart';
+import 'splash/splash_page.dart';
 
 void main() {
   runApp(const MyApp());

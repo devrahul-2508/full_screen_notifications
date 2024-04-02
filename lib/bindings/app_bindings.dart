@@ -1,5 +1,5 @@
-import 'package:full_screen_notification/service/notification_service.dart';
 import 'package:get/get.dart';
+import '../service/notification_service.dart';
 
 class AppBindings extends Bindings {
   @override

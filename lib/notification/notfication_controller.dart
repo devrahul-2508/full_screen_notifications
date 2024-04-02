@@ -1,13 +1,10 @@
-import 'dart:developer';
 
-import 'package:full_screen_notification/profile/profile_page.dart';
-import 'package:full_screen_notification/settings/settings_page.dart';
-import 'package:full_screen_notification/splash/splash_controller.dart';
-import 'package:full_screen_notification/splash/splash_page.dart';
 import 'package:full_screen_notification/utils/routes.dart';
 import 'package:get/get.dart';
 
 import '../controller/awesome_notification_controller.dart';
+import '../splash/splash_controller.dart';
+import '../splash/splash_page.dart';
 
 class NotificationController extends GetxController {
   String payLoadMsg = "";
