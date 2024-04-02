@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:flutter/services.dart';
-import 'package:full_screen_notification/service/method_channel_service.dart';
 import 'package:get/get.dart';
+
+import '../service/method_channel_service.dart';
 
 class AwesomeNotificationController {
   /// Use this method to detect when a new notification or a schedule is created

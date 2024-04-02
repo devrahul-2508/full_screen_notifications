@@ -1,13 +1,13 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:full_screen_notification/controller/awesome_notification_controller.dart';
-import 'package:full_screen_notification/home/home_page.dart';
-import 'package:full_screen_notification/notification/notification_page.dart';
-import 'package:full_screen_notification/profile/profile_page.dart';
-import 'package:full_screen_notification/settings/settings_page.dart';
 import 'package:get/get.dart';
 
+import '../controller/awesome_notification_controller.dart';
+import '../home/home_page.dart';
+import '../notification/notification_page.dart';
+import '../profile/profile_page.dart';
+import '../settings/settings_page.dart';
 import '../utils/routes.dart';
 
 class SplashController extends GetxController {

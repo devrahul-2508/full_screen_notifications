@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:full_screen_notification/notification/notfication_controller.dart';
 import 'package:get/get.dart';
+
+import 'notfication_controller.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
